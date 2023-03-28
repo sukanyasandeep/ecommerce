@@ -1,0 +1,12 @@
+<h1>Admin | Categories</h1>
+
+<%= link_to 'Add Category', new_admin_category_path %>
+
+<table>
+    <thead>
+          <th> Name </th>
+	</thead>
+    <tbody>
+        <%=render partial: "admin_category", collection: @categories %>
+	</tbody>
+</table>

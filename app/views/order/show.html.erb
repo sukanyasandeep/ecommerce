@@ -1,0 +1,28 @@
+<h1>Your Orders</h1>
+<table>
+      <thead>
+        <th> Name </th>
+        <th> Price </th>
+        <th> Quantity </th>
+        <th> Subtotal </th>
+      </thead>
+      <tbody>
+       <% @cart_products_with_qty.each do |array| %>
+          <%product = array[0] %>
+          <%qty = array[1] %>
+          <tr>
+            <td><%=product.name%></td>
+            <td><%=product.price%></td>
+            <td><%=qty%></td>
+            <td><%=product.price * qty.to_i%></td>
+          </tr>
+       <% end %>
+        <tr>
+          <td colspan="3">Total</td>
+          <td colspan="3"><%=@cart_total%></td>
+        </tr>
+        <tr>
+          <td style="margin-left:60px;"><%= link_to "Buy Now", order_show_path, class: "button disabled" %></td>
+        </tr>
+</tbody>
+</table>

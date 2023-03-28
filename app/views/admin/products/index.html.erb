@@ -1,0 +1,12 @@
+<h1>Admin | Products</h1>
+<%= link_to 'Add Product', new_admin_product_path %>
+<table>
+  <thead>
+    <th> Name </th>
+    <th> Description</th>
+    <th> Price</th>
+  </thead>
+  <tbody>
+    <%= render partial: "admin_product", collection: @products %>
+  </tbody>
+</table>

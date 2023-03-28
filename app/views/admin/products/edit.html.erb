@@ -1,0 +1,17 @@
+<h1>Edit Product</h1>
+<%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.text_field :name %>
+    <%=f.text_field :description %>
+    <%= f.text_field :price %>
+    <% if @product.image.attached? %>
+      <%= image_tag @product.image, style: "width: 200px; display: block"%>
+    <%end%>
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+    <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
+    <%= f.button :submit %>
+<%end%>
+<%=link_to 'Back to Product List', admin_products_path %>
+
+
+

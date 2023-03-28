@@ -1,0 +1,13 @@
+<div class="w3-card-4" style="width:14%">
+     <%= image_tag @product.image, style: "width: 250px; display: block" if @product.image.attached? %>              
+      <div class="w3-container w3-center">
+          <p><%= @product.name.capitalize %></p>
+          <p><%= @product.description %></p>
+          <p>Rs <%= @product.price %></p>
+          <p><%= link_to 'Add to Cart', add_to_cart_path(@product), class: "button" %></p>
+          <p><%= link_to 'Back to Product List', products_path , class: "button"%></p>
+      </div>
+</div>
+
+
+      

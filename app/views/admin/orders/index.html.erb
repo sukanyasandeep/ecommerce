@@ -1,0 +1,13 @@
+<h1>Admin | Orders</h1>
+
+<table>
+       <thead>
+          <th> User </th>
+          <th> Product </th>
+          <th> Quantity </th>
+          <th> Order Time </th>
+        </thead>
+        <tbody>
+        <%= render partial: "admin_order", collection: @orders %>
+        </tbody>
+</table>
